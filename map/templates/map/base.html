@@ -9,15 +9,21 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300i" rel="stylesheet">
+    <script
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i" rel="stylesheet">
 
     <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'map/main.css' %}">
     <script src="{% static 'map/smoothmarkerbouncing.js' %}">
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous">
+
+
+
+    </script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="//resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -28,6 +34,10 @@
             $( "#accordion" ).accordion({
                 collapsible: true});
                });
+
+
+
+
     </script>
 
     <title>
@@ -38,16 +48,16 @@
 <body>
 <header class="header clearfix">
     <p id="date"></p>
-      <hr>
-
+       <hr class="fat hr">
     <div id="logo_container">
         <h1 class="flux">Kina Opery Teatry</h1>
-        <hr>
+        <hr class="fat hr">
         <p>
-           Kultury nie uprawia się zrywami, wtedy, kiedy ktoś orzeknie, że „już można”. <br>Fundamentem kultury jest uporczywość wysiłku twórczego i żaden internet tego nie zmieni ani od tego nie uwolni.
-<br>-Barbara Toruńczyk-
+            Kultury nie uprawia się zrywami, wtedy, kiedy ktoś orzeknie, że „już można”. <br>Fundamentem kultury jest
+            uporczywość wysiłku twórczego i żaden internet tego nie zmieni ani od tego nie uwolni.
+            <br>-Barbara Toruńczyk-
         </p>
-        <hr>
+         <hr class="fat hr">
     </div>
 </header>
 <div class="jumbotron_main">
@@ -60,18 +70,18 @@
             </div>
             <div class="col-sm-8">
                 <div id="map">
-                    {% leaflet_map "map" callback="window.map_init_basic"%}
+                    {% leaflet_map "map" callback="window.map_init_basic" %}
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<hr>
+   <hr class="fat hr">
 <footer>
-        <center>
-            <p>tcpl & jrk 2017</p>
-        </center>
+    <center>
+        <p>tcpl & jrk 2017</p>
+    </center>
 
 </footer>
 
@@ -109,6 +119,13 @@
                             var marker = L.marker([place.lat,place.long])
                             $("#accordion").accordion("refresh");
                             $("h3").eq(i).text(place.name);
+                            $(place.shows).each(function(index){
+                               var div = $("h3").next();
+                               var title = place.shows[index].title;
+                               var titled = title.substr(0,1).toUpperCase()+title.substr(1);
+                                div.append(titled + '<br>' + '<hr>')});
+
+                             $("#accordion").accordion("refresh");
                             marker.setBouncingOptions({
                              bounceHeight : 20,    // height of the bouncing
                              bounceSpeed  : 80,    // bouncing speed coefficient
@@ -123,12 +140,20 @@
                     );
              };
 
+
+
+
+
 </script>
 <script type="text/javascript">
          var months = ['Stycznia', 'Lutego', 'Marca', 'Kwietnia', 'Maja', 'Czerwca', 'Lipca',
              'Sierpnia', 'Września', 'Pazdziernika', 'Listopada', 'Grudnia'];
 var today = new Date();
-document.getElementById("date").innerHTML = 'Kraków '+ today.getDate() + " " +  months[today.getMonth()]+ " " + today.getFullYear();
-   </script>
+document.getElementById("date").innerHTML = 'Kraków '+ " " + today.getDate() + " " +  months[today.getMonth()]+ " " + today.getFullYear();
+
+
+
+
+</script>
 
 </html>

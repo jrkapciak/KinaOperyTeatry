@@ -11,8 +11,8 @@ background: white;  /* fallback for old browsers */
      background-color: white;
      border: 1px solid black;
      color: black;
-    }
 
+    }
 #accordion h3{
     font-family: 'lobster';
      color: black;
@@ -43,9 +43,17 @@ header p{
     font-family: 'Open Sans', sans-serif;
     font-size:0.7em;
     }
-hr{
+.hr fat{
 	border-top: 2px solid black;
 }
+.hr{
+	border-top: 0.5px solid black;
+}
+
+.small {
+border-top: 0.5px solid black;
+}
+
 header h1{
     color:black;
     font-size:3em;
