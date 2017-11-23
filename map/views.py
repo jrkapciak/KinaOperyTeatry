@@ -8,7 +8,7 @@ from .models import Place
 class Map(View):
 
     def get(self, request):
-        opera = Place.objects.get(name='Opera Krakowska')
+        opera = Place.objects.get(name='opera krakowska')
         context = {
             'name':opera.name,
             'description':'Opis',
