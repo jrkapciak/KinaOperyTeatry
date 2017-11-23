@@ -9,5 +9,6 @@ class PlaceAdmin(admin.ModelAdmin):
     pass
 
 @admin.register(Shows)
-class ShowseAdmin(admin.ModelAdmin):
+class ShowsAdmin(admin.ModelAdmin):
+    list_display = ('title', 'date', 'place')
     pass

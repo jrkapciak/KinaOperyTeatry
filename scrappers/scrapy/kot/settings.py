@@ -94,9 +94,9 @@ DATABASE = {
     'drivername': 'postgres',
     'host': 'localhost',
     'port': '5432',
-    'username': 'admin',
-    'password': 'teczowalaternatywa',
-    'database': 'kot'
+    'username': 'postgres',
+    'password': 'kopytko666',
+    'database': 'scrapy'
 }
 
 ITEM_PIPELINES = {
