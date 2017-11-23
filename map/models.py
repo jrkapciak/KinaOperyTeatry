@@ -19,7 +19,7 @@ class Shows(models.Model):
     title = models.CharField(max_length=128, verbose_name='Tytuł')
     time = models.CharField(max_length=128,verbose_name='Czas')
     date = models.CharField(max_length=128, verbose_name='Data')
-    place = models.ForeignKey(Place,blank=True, null=True)
+    place = models.ForeignKey(Place,blank=True, null=True, related_name='shows')
 
     class Meta:
         ordering = ['date', ]
