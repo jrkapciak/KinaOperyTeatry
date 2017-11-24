@@ -14,16 +14,17 @@ background: white;  /* fallback for old browsers */
 
     }
 #accordion h3{
-    font-family: 'lobster';
-     color: black;
-     font-size:1.5em;
-     background-color: white;
-     border: 2px solid black;
-    }
+   font-family: 'Oswald', sans-serif;
+   font-weight: 600;
+   color: black;
+   font-size:1.5em;
+   background-color: white;
+   border: 2px solid black;
+   text-transform:capitalize;
+   }
 #accordion h3:hover{
-    background-color: white;
-    text-decoration:underline;
-    }
+   background-color: #eae3e3;
+}
 
 .ui-state-focus { outline: none; }
 

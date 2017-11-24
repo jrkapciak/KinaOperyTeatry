@@ -13,7 +13,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
             integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,600" rel="stylesheet">    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
     <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
           integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
@@ -120,7 +120,7 @@
                             $("#accordion").accordion("refresh");
                             $("h3").eq(i).text(place.name);
                             $(place.shows).each(function(index){
-                               var div = $("h3").next();
+                                      var div = $("h3").next();
                                var title = place.shows[index].title;
                                var titled = title.substr(0,1).toUpperCase()+title.substr(1);
                                 div.append(titled + '<br>' + '<hr>')});
