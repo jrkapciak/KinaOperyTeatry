@@ -7,7 +7,7 @@ class ShowsSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Shows
-        fields = ('title','date',)
+        fields = ('title','date','time',)
 
 
 class PlacesSerializer(serializers.ModelSerializer):
