@@ -32,7 +32,9 @@
     <script>
         $( function() {
             $( "#accordion" ).accordion({
-                collapsible: true});
+                collapsible: true,
+                heightStyle: "content"
+                });
                });
     </script>
     <title>
@@ -113,7 +115,9 @@
                               exclusive    : true,
                                  }).on('click', function() {
                                  this.toggleBouncing();
+
                                   $("h3").eq(i).click()
+                                   $("#accordion").accordion("refresh");
                                  });
                              marker.addTo(map);
                             })
