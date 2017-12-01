@@ -5,7 +5,7 @@ from ..items import ShowItem, ShowItemLoader
 
 class OperaSpider(scrapy.Spider):
     name = "opera"
-    allowed_domains = ["https://www.opera.krakow.pl"]
+    allowed_domains = ["www.opera.krakow.pl"]
     start_urls = [
         "http://www.opera.krakow.pl/pl/repertuar/na-afiszu/listopad"
 
